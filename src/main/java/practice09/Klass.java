@@ -1,21 +1,18 @@
 package practice09;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Klass {
     protected int number;
     protected Student leader;
-    protected Student student;
+//    protected Student student;
+    private List<Student> students;
 
     public Klass(int klass) {
+        this.students = new LinkedList<>();
         this.number = klass;
     }
-
-//    public Klass(int number, Student leader, List<Student> list) {
-//        this.number = number;
-//        this.leader = leader;
-//        this.list = list;
-//    }
 
     public int getNumber() {
         return number;
@@ -38,15 +35,16 @@ public class Klass {
     }
 
     public void assignLeader(Student student) {
-        if(this.student == null) {
-            System.out.println("It is not one of us.");
+        if (this.students.size() == 0) {
+            System.out.print("It is not one of us.\n");
+            return;
         } else {
             setLeader(student);
         }
     }
 
     public void appendMember(Student student) {
-        this.student = student;
+        this.students.add(student);
     }
 
 }

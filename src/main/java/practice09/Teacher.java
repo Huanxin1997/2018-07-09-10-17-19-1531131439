@@ -26,7 +26,7 @@ public class Teacher extends Person {
             return super.introduce() + " I am a Teacher. I teach No Class.";
         }
         else {
-            return super.introduce() + " I am a Teacher. I teach Class 2.";
+            return super.introduce() + " I am a Teacher. I teach Class " + klass.number + ".";
         }
     }
 

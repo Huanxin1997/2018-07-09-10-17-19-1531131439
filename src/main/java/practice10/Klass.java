@@ -42,6 +42,10 @@ public class Klass {
         }
     }
 
+    public boolean isIn(Student student) {
+        return student.getKlass().getNumber() == getNumber();
+    }
+
     public void appendMember(Student student) {
         this.students.add(student);
     }

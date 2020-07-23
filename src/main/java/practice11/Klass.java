@@ -42,7 +42,7 @@ public class Klass {
         } else {
             setLeader(student);
             for(int i = 0;i < teachers.size();i ++) {
-                teachers.get(i).updateAssignLeader(leader, this);
+                teachers.get(i).updateAssignLeaderListener(leader);
             }
         }
     }
@@ -55,7 +55,7 @@ public class Klass {
         student.setKlass(this);
         this.students.add(student);
         for(int i = 0;i < teachers.size();i ++) {
-            teachers.get(i).updateStudentJoin(student, this);
+            teachers.get(i).updateStudentJoinListener(student);
         }
     }
 

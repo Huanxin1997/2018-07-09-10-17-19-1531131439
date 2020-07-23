@@ -8,6 +8,9 @@ public class Teacher extends Person {
     public Teacher(int id, String name, int age, LinkedList<Klass> classes) {
         super(id, name, age);
         this.classes = classes;
+        classes.forEach(klass -> {
+            klass.registerTeachers(this);
+        });
     }
 
     public Teacher(int id, String name, int age) {
@@ -51,11 +54,11 @@ public class Teacher extends Person {
         return false;
     }
 
-    public void updateJoinMsg(Student student, Klass klass) {
+    public void updateStudentJoin(Student student, Klass klass) {
         System.out.printf("I am " + getName() + ". I know " + student.getName() + " has joined Class " + klass.getNumber() + ".\n");
     }
 
-    public void updateAssignMsg(Student student, Klass klass) {
+    public void updateAssignLeader(Student student, Klass klass) {
         System.out.printf("I am " + getName() + ". I know " + student.getName() + " become Leader of Class " + klass.getNumber() + ".\n");
     }
 }
